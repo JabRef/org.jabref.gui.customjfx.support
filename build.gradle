@@ -6,4 +6,16 @@ targetCompatibility = 1.9
 group = "org.jabref"
 version = "1.0.0"
 
+compileJava {
+    options.encoding = 'UTF-8'
+    options.sourcepath = files(sourceSets.main.java.srcDirs)
+    options.compilerArgs.addAll([
+            "--add-exports",
+            "javafx.base/com.sun.javafx.collections=customjfx"
+    ])
+    options.compilerArgs.addAll([
+            "--add-exports",
+            "javafx.graphics/com.sun.javafx.scene.input=customjfx"
+    ])
 
+}
